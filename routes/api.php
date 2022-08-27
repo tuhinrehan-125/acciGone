@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlackboxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/all-data', [BlackboxController::class, 'index']);
+Route::post('/store', [BlackboxController::class, 'store']);
+Route::get('/blackbox/{id}', [BlackboxController::class, 'show']);
+
+Route::get('/blackbox/{id}', [BlackboxController::class, 'show']);
+
+Route::post('/filter-data', [BlackboxController::class, 'filter']);

@@ -20,10 +20,35 @@ class User extends DynamoDbModel
         // 'name',
         // 'email',
         // 'password',
-        'time'
+        'id',
+        'auth_key',
+        'userId',
+        'company_name',
+        'time',
+        'Latitude',
+        'Longitude',
+        'Altitude',
+        'speed',
+        'accx',
+        'accy',
+        'accz',
+        'gyrox',
+        'gyroy',
+        'gyroz',
+        'roll',
+        'pitch',
+        'yaw',
+        'engine',
+        'ac',
+        'break',
+        'sonar1',
+        'sonar2',
+        'sonar3',
+        'sonar4',
+        'battery',
     ];
 
-    protected $primaryKey = 'time';
+    // protected $primaryKey = 'time';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,5 +69,5 @@ class User extends DynamoDbModel
         'email_verified_at' => 'datetime',
     ];
 
-    protected $table = 'MqttBlackbox';
+    protected $table = 'Blackboxes';
 }
